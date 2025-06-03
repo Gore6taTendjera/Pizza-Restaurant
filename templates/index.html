@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../static/navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>Pizza Store</title>
+</head>
+
+<body>
+    <header>
+        <nav style="display: flex;">
+            <div class="outer" style="display: flex">
+                <div class="left">
+                    <a href="#">
+                        <h1>Home</h1>
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="{{ url_for('staff') }}">
+                        <h1>Staff</h1>
+                    </a>
+                    <a href="{{ url_for('order') }}">
+                        <h1>Order</h1>
+                    </a>
+                    <a href="{{ url_for('secret')}}">
+                        <h1>Secret</h1>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <h2 class="preTitle">Welcome to</h2>
+        <h1 class="title">Mario and Luigi's Pizzeria</h1>
+        <p class="description">Welcome to our Pizzeria, where delicious Italian pizzas are our specialty. Mario takes
+            your orders with a smile and efficiently communicates them to the kitchen. Luigi, our kitchen maestro,
+            transforms your choices into mouthwatering pizzas, and he ensures each one is perfectly baked.
+            <br><br>Come savor the taste of Italy at our pizzeria!
+        </p>
+    </header>
+
+</body>
+
+</html>

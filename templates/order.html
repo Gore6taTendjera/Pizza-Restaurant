@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/order.css">
+    <link rel="stylesheet" href="../static/navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Order</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="outer" style="display: flex">
+                <div class="left">
+                    <a href="{{ url_for('index') }}">
+                        <h1>Home</h1>
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="{{ url_for('staff') }}">
+                        <h1>Staff</h1>
+                    </a>
+                    <a href="#">
+                        <h1>Order</h1>
+                    </a>
+                    <a href="{{ url_for('secret') }}">
+                        <h1>Secret</h1>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section1 expandSection">
+        <h1 class="title">Welcome Client ...</h1>
+        <p class="text">Hello, I'm Mario, and I'm here to assist you with your pizza order!<br>
+            Please open the <b>menu</b> and chose which pizza you want, we have great collection of Itallian pizza!<br>
+            Later you have to confirm your pizza choise.<br>
+            Also you can chose more than 1 type of pizza 😉
+        </p>
+        <button class="showPizzaButton" onclick="toggle_display()">PIZZA MENU</button>
+        <div class="pizzaCards">
+            <div id="CheesePizza" class="pizzaCard">
+                <div class="checkboxWrapper">
+                    <label class="checkboxLabel">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <img class="pizzaImage"
+                    src="https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2018/04/sicilian-cheese-1-1024x626.jpg.webp"
+                    alt="ERROR: Pizza image not found or loading">
+                <div class="pizzaCardInsideWrapper">
+                    <h1 class="pizzaName">€14 Cheese</h1>
+                    <h2 class="pizzaIngredients">Ingredients:</h2>
+                    <ul class="ingredients">
+                        <li>Pizza Dough</li>
+                        <li>Tomato Sauce</li>
+                        <li>Mozzarella Cheese</li>
+                        <li>Olive Oil</li>
+                        <li>Salt</li>
+                        <li>Basil (optional, for garnish)</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="VeggiePizza" class="pizzaCard">
+                <div class="checkboxWrapper">
+                    <label class="checkboxLabel">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <img class="pizzaImage"
+                    src="https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_570541132.jpg.webp"
+                    alt="ERROR: Pizza image not found or loading">
+                <div class="pizzaCardInsideWrapper">
+                    <h1 class="pizzaName">€8 Veggie</h1>
+                    <h2 class="pizzaIngredients">Ingredients:</h2>
+                    <ul class="ingredients">
+                        <li>Pizza Dough, Olive Oil</li>
+                        <li>Tomato Sauce, Cherry Tomatoes (sliced, optional)</li>
+                        <li>Mozzarella Cheese, Spinach Leaves</li>
+                        <li>Bell Peppers, Red Onion, Mushrooms, Black Olives (Sliced)</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="PepperoniPizza" class="pizzaCard">
+                <div class="checkboxWrapper">
+                    <label class="checkboxLabel">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <img class="pizzaImage"
+                    src="https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_514457074.jpg.webp"
+                    alt="ERROR: Pizza image not found or loading">
+                <div class="pizzaCardInsideWrapper">
+                    <h1 class="pizzaName">€12 Pepperoni</h1>
+                    <h2 class="pizzaIngredients">Ingredients:</h2>
+                    <ul class="ingredients">
+                        <li>Pizza Dough</li>
+                        <li>Tomato Sauce</li>
+                        <li>Mozzarella Cheese</li>
+                        <li>Pepperoni Slices</li>
+                        <li>Olive Oil</li>
+                        <li>Dried Oregano</li>
+                        <li>Crushed Red Pepper Flakes (optional, for extra spice)</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="MeatPizza" class="pizzaCard">
+                <div class="checkboxWrapper">
+                    <label class="checkboxLabel">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <img class="pizzaImage"
+                    src="https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/11/The-210-Carnivore-pizza-1024x682.jpg.webp"
+                    alt="ERROR: Pizza image not found or loading">
+                <div class="pizzaCardInsideWrapper">
+                    <h1 class="pizzaName">€18 Meat</h1>
+                    <h2 class="pizzaIngredients">Ingredients:</h2>
+                    <ul class="ingredients">
+                        <li>Tomato Sauce</li>
+                        <li>Mozzarella Cheese</li>
+                        <li>Pepperoni Slices</li>
+                        <li>Italian Sausage, Ground Beef (cooked and crumbled)</li>
+                        <li>Ham Slices, Sliced Salami (optional)</li>
+                        <li>Crushed Red Pepper Flakes (optional, for extra spice)</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="MargheritaPizza" class="pizzaCard">
+                <div class="checkboxWrapper">
+                    <label class="checkboxLabel">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <img class="pizzaImage"
+                    src="https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_347791016.jpg.webp"
+                    alt="ERROR: Pizza image not found or loading">
+                <div class="pizzaCardInsideWrapper">
+                    <h1 class="pizzaName">€7 Margherita</h1>
+                    <h2 class="pizzaIngredients">Ingredients:</h2>
+                    <ul class="ingredients">
+                        <li>Pizza Dough</li>
+                        <li>Ripe Tomatoes</li>
+                        <li>Fresh Mozzarella Cheese</li>
+                        <li>Fresh Basil Leaves</li>
+                        <li>Olive Oil</li>
+                        <li>Salt</li>
+                        <li>Black Pepper</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="BBQChickenPizza" class="pizzaCard">
+                <div class="checkboxWrapper">
+                    <label class="checkboxLabel">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <img class="pizzaImage"
+                    src="https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_184944413.jpg.webp"
+                    alt="ERROR: Pizza image not found or loading">
+                <div class="pizzaCardInsideWrapper">
+                    <h1 class="pizzaName">€15 BBQ Chicken</h1>
+                    <h2 class="pizzaIngredients">Ingredients:</h2>
+                    <ul class="ingredients">
+                        <li>Pizza Dough, Mozzarella Cheese</li>
+                        <li>Coocked Chicken, BBQ Sauce</li>
+                        <li>Red Onion</li>
+                        <li>Olive Oil</li>
+                        <li>Salt, Pepper</li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+    <section class="section2">
+        <h1 class="title">You made your choise, Great!</h1>
+        <h2 class="subTitle">Confirm your order by pressing the button below!</h2>
+        <div class="pizzaCards">
+
+        </div>
+        <div class="confirmButtonDiv">
+            <button class="confirmPizzaButton" onclick="sendToCashierConfirm()">CONFIRM</button>
+        </div>
+        <div id="pleasePay" style="display: none;">
+            <h1 class="text">Would you like to pay with QR code?</h1>
+            <img src="https://ventipix.com/images/qr/designer-qr-codes.png" alt="qrCode">
+            <h1 class="text">Please pay!</h1>
+        </div>
+        <div id="pleaseWait" style="display: none;">
+            <h1 class="text">We are processing your order!</h1>
+            <h1 class="text">Please wait until your order is cooked!</h2>
+                <h1 class="text">...</h1>
+        </div>
+    </section>
+
+
+    <section class="section3" style="display: none;">
+        <h1 class="title">cashier</h1>
+
+        <div class="pendingOrder">
+            <div class="pendingOrderRows">
+                <div class="pendingOrderRow">
+                    <h2>Order Number:</h2>
+                    <h3 id="pendingOrderNumber">0001</h3>
+                </div>
+                <div class="pendingOrderRow">
+                    <h2>Pizza name:</h2>
+                    <h3 id="pendingPizzaName">Pepperoni</h3>
+                </div>
+                <div class="pendingOrderRow">
+                    <h2>Status:</h2>
+                    <h3 id="payedStatus">Not Payed</h3>
+                </div>
+            </div>
+
+            <div class="pendingOrderRow" style="align-content: center; display: flex;">
+                <button id="confirmButton">CONFIRM</button>
+            </div>
+
+            <div class="pendingOrderRow" style="align-content: center; display: flex;">
+                <button>CANCEL</button>
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+<script>
+    function toggle_display() {
+        var section = document.querySelector('.section1');
+        var pizzaCards = document.querySelector('.pizzaCards');
+
+        if (pizzaCards.style.visibility === 'hidden' || pizzaCards.style.visibility === '') {
+            pizzaCards.style.visibility = 'visible';
+            section.classList.remove('expandSection');
+        }
+        else {
+            pizzaCards.style.visibility = 'hidden';
+            section.classList.add('expandSection');
+        }
+    }
+
+    const checkboxes = document.querySelectorAll('.pizzaCard input[type="checkbox"]');
+    const section2PizzaCards = document.querySelector('.section2 .pizzaCards');
+    const section3 = document.querySelector('.section3');
+
+    let orderCounter = 1;
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                const pizzaCardId = this.closest('.pizzaCard').id;
+                const pizzaName = document.getElementById(pizzaCardId).querySelector('.pizzaName').textContent;
+
+                const clonedPizzaCard = document.getElementById(pizzaCardId).cloneNode(true);
+                const clonedCheckbox = clonedPizzaCard.querySelector('div[class="checkboxWrapper"]');
+
+                if (clonedCheckbox) {
+                    clonedCheckbox.remove();
+                }
+                section2PizzaCards.appendChild(clonedPizzaCard);
+
+                const clonedPendingOrder = document.querySelector('.pendingOrder').cloneNode(true);
+                const pendingOrderNumber = String(orderCounter).padStart(4, '0');
+
+                clonedPendingOrder.querySelector('#pendingPizzaName').textContent = pizzaName;
+                clonedPendingOrder.querySelector('#pendingOrderNumber').textContent = pendingOrderNumber;
+
+                section3.appendChild(clonedPendingOrder);
+
+                orderCounter++;
+
+            }
+            else {
+                const pizzaCardId = this.closest('.pizzaCard').id;
+                const pizzaCardToRemove = section2PizzaCards.querySelector(`#${pizzaCardId}`);
+                const pendingOrderToRemove = section3.querySelector(`#${pizzaCardId}`);
+
+                if (pizzaCardToRemove) {
+                    section2PizzaCards.removeChild(pizzaCardToRemove);
+                }
+
+                if (pendingOrderToRemove) {
+                    section3.removeChild(pendingOrderToRemove);
+                }
+
+            }
+        });
+    });
+
+
+
+    function sendToCashierConfirm() {
+        const pendingOrders = Array.from(document.querySelectorAll('.section3 .pendingOrder'));
+        const clonedPendingOrders = pendingOrders.slice(1);
+
+        const data = clonedPendingOrders.map(order => {
+            const pizzaName = order.querySelector('#pendingPizzaName').textContent;
+            const orderNumber = order.querySelector('#pendingOrderNumber').textContent;
+            return { pizzaName, orderNumber };
+        });
+
+        fetch('/confirm_order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', },
+            body: JSON.stringify(data),
+
+        })
+
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+
+        document.getElementById("pleasePay").style.display = "flex";
+        setTimeout(function () {
+            document.getElementById("pleasePay").style.display = "none";
+            document.getElementById("pleaseWait").style.display = "block";
+        }, 5000);
+    }
+
+</script>

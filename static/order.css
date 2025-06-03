@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    ::-webkit-scrollbar {
+        /* width */
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        /* Track */
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        /* Handle */
+        background: rgb(100, 100, 100);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        /* Handle on hover */
+        background: rgb(200, 200, 200);
+    }
+
+    ::-webkit-scrollbar-track-piece {
+        /* not handle on */
+        background: rgb(1, 1, 1);
+    }
+}
+
+/* Firefox */
+@supports (-moz-appearance: none) {
+    html {
+        scrollbar-color: rgb(100, 100, 100) black;
+        scrollbar-width: thin;
+    }
+}
+
+html,
+body,
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tilt Neon', serif;
+    color: white;
+    background-color: transparent;
+}
+
+.navbar {
+    font-size: 25px;
+    display: flex;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 370px;
+    z-index: 99;
+
+    a {
+        text-decoration: none;
+    }
+
+    .outer {
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+    }
+
+    .left {
+        display: flex;
+        padding-left: 120px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .right {
+        display: flex;
+        padding-right: 120px;
+        width: 400px;
+        justify-content: right;
+        align-items: center;
+        gap: 95px;
+        flex-shrink: 0;
+    }
+}
+
+.section1 {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../static/images/cloth.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .title {
+        text-align: center;
+        font-size: 60px;
+        margin-bottom: 40px;
+        padding-top: 150px;
+        font-weight: 100;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 35px;
+        margin: 0 196px 10px;
+        padding: 10px 10px 10px;
+        line-height: 50px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        border: #ffea00;
+        border-style: solid;
+        border-radius: 40px;
+    }
+}
+
+.expandSection {
+    height: 700px;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.showPizzaButton {
+    display: block;
+    margin: 60px auto 30px;
+    text-align: center;
+    box-shadow: 0px 13px 14px -7px #ffc533;
+    background: linear-gradient(to bottom, #b3af59 5%, #b5821d 100%);
+    background-color: #b3af59;
+    border-radius: 42px;
+    border: 2px solid #0e161c;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 22px;
+    text-decoration: none;
+    text-shadow: 0px 2px 0px #040708;
+}
+
+.showPizzaButton:hover {
+    background: linear-gradient(to bottom, #b5821d 5%, #b3af59 100%);
+    background-color: #b5821d;
+}
+
+.showPizzaButton:active {
+    position: relative;
+}
+
+.pizzaCards .clonedPizzaCards {
+    visibility: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1800px;
+    margin: auto;
+    padding-bottom: 100px;
+    overflow-y: hidden;
+}
+
+.pizzaCard {
+    background-color: #6e0000;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    width: 550px;
+    height: 280px;
+    border-radius: 15px;
+    border: 2px solid #ffee00;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+
+    .pizzaImage {
+        margin: 0;
+        display: block;
+        height: 100%;
+        width: 280px;
+    }
+
+    .pizzaCardInsideWrapper {
+        height: 100%;
+        width: 100%;
+    }
+
+    .pizzaName {
+        font-size: 35px;
+        padding-left: 8px;
+        flex-direction: row;
+    }
+
+    .pizzaIngredients {
+        text-align: left;
+        margin: 0;
+        margin-top: 5px;
+        padding-left: 8px;
+        font-size: 30px;
+    }
+
+    ul {
+        margin: 0 !important;
+        margin-top: 5px !important;
+        margin-left: 8px !important;
+        padding: 0 !important;
+        padding-left: 18px !important;
+        padding-bottom: 10px !important;
+    }
+
+    li {
+        text-align: left;
+    }
+
+}
+
+.checkboxWrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+
+.checkboxLabel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.checkboxLabel input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.checkmark {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(0, 118, 154);
+    border-radius: 30%;
+    border: 2px solid #ffee00;
+
+}
+
+.pizzaCard:hover .checkmark {
+    display: block;
+}
+
+.checkboxLabel input:checked~.checkmark {
+    display: block;
+}
+
+.checkmark:after {
+    position: absolute;
+    content: "";
+    display: none;
+}
+
+.checkboxLabel input:checked~.checkmark:after {
+    position: absolute;
+    display: block;
+}
+
+.checkboxLabel .checkmark:after {
+    position: absolute;
+    right: 6px;
+    bottom: 4px;
+    width: 10px;
+    height: 20px;
+    border: solid rgb(0, 255, 4);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: none;
+}
+
+
+.pizzaCards {
+    visibility: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1800px;
+    margin: auto;
+    padding-bottom: 100px;
+    overflow-y: hidden;
+}
+
+
+.section2 {
+    background-color: #8b7b00;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 800px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/images/chef3.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .title {
+        text-align: center;
+        font-size: 60px;
+        padding-top: 60px;
+        font-weight: 100;
+    }
+
+    .subTitle {
+        text-align: center;
+        font-size: 50px;
+        margin: 20px 0 50px;
+        font-weight: 100;
+    }
+
+    .pizzaCards {
+        visibility: visible;
+        padding: 0;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 40px;
+        margin: 0;
+    }
+
+    #pleasePay {
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #pleasePay,
+    #pleaseWait {
+        display: block;
+        text-align: center;
+        padding-bottom: 100px;
+    }
+
+    #pleaseWait .text {
+        color: rgb(255, 0, 0);
+    }
+
+    #orderReady .text {
+        font-size: 55px;
+        color: #00ff10;
+    }
+}
+
+.confirmButtonDiv {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.confirmPizzaButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    box-shadow: 0px 13px 14px -7px #0ab3b3;
+    background: linear-gradient(to bottom, #57fa51 5%, #01dddd 100%);
+    background-color: #b3af59;
+    border-radius: 42px;
+    border: 2px solid #0e161c;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 22px;
+    text-decoration: none;
+    text-shadow: 0px 2px 0px #040708;
+}
+
+
+.section3 {
+    background-color: #8b7b00;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.section3 .title {
+    padding: 0;
+    margin: 0;
+    font-size: 70px;
+    color: white;
+}
+
+.pendingOrder {
+    justify-content: space-between;
+    background-color: #0039b3;
+    display: flex;
+    height: 200px;
+    width: 1500px;
+    margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    border: 2px solid #0e161c;
+
+}
+
+.pendingOrderRows {
+    margin: auto auto auto;
+    margin-left: 0px;
+    height: 120px;
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    background-color: #00ff10;
+
+    .pendingOrderRow {
+        background-color: #FF5733;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: 2px solid #0e161c;
+        text-align: center;
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin: 5px 0 5px;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/staff.css">
+    <link rel="stylesheet" href="../static/navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Staff</title>
+</head>
+<header>
+    <nav class="navbar">
+        <div class="outer" style="display: flex">
+            <div class="left">
+                <a href="{{ url_for('index') }}">
+                    <h1>Home</h1>
+                </a>
+            </div>
+            <div class="right">
+                <a href="#">
+                    <h1>Staff</h1>
+                </a>
+                <a href="{{ url_for('order') }}">
+                    <h1>Order</h1>
+                </a>
+                <a href="{{ url_for('secret')}}">
+                    <h1>Secret</h1>
+                </a>
+            </div>
+        </div>
+
+    </nav>
+</header>
+
+<body>
+    <section class="section0">
+        <h1 class="title">Staff</h1>
+        <p class="staffDescription">Our dynamic staff ensures that your dining experience is both efficient and
+            friendly. At Mario and Luigi's, we understand the importance of a well-coordinated team to provide excellent
+            service and delicious food.</p>
+        <div class="wrapper">
+            <img class="luigi" src="../static/images/chef2.jpg" alt="Luigi Image">
+            <div>
+                <h2 class="luigiName">Luigi</h2>
+                <p class="luigiDescription">My journey as an Italian pizza chef is a passionate one, deeply rooted in my
+                    love for the art of pizza making. I was born and raised in the heart of Italy, surrounded by the
+                    tantalizing aromas of my grandmother's kitchen, where I learned the secrets of authentic Italian
+                    cooking.
+                    <br>As I grew older, my fascination with pizza became more pronounced. I spent countless hours
+                    watching skilled pizzaiolos craft exquisite pies, and I knew I wanted to follow in their footsteps.
+                </p>
+            </div>
+        </div>
+        <div class="wrapper" style="margin-top: 80px;">
+            <div>
+                <h2 class="marioName">Mario</h2>
+                <p class="marioDescription">I'm a young and ambitious individual currently studying my degree in ICT at
+                    Fontys University. My passion for technology and my drive to learn and grow in this field are what
+                    led me to embark on this academic journey.
+                    <br> Despite my commitment to my studies, I've recently taken on a new role as a cashier at a local
+                    pizzeria. It's an exciting step in my life where I'm not only expanding my knowledge in the world of
+                    technology but also gaining valuable real-world experience in a completely different domain.
+                </p>
+            </div>
+            <img class="mario" src="../static/images/cashier.jpg" alt="Mario Image">
+        </div>
+    </section>
+</body>
+
+</html>
